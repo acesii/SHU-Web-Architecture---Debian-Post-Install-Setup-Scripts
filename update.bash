@@ -28,8 +28,9 @@ echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | sudo /usr/bin/debc
 
 # Use a "Here document" to redirect the text appearing between the !!!s as the standard input
 # for the apt-get command. Essentially saving the user the need to type "Y<enter>"
+# We also install make, gcc and linux-headers for the current kernel.. These are needed to run the vmware hosttools
 
-apt-get install git sun-java6-jdk <<!!!
+apt-get install git sun-java6-jdk make gcc-4.3 linux-headers-`uname -r` <<!!!
 Y
 !!!
 
