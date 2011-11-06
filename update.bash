@@ -30,7 +30,7 @@ echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | sudo /usr/bin/debc
 # for the apt-get command. Essentially saving the user the need to type "Y<enter>"
 # We also install make, gcc and linux-headers for the current kernel.. These are needed to run the vmware hosttools
 
-apt-get install git sun-java6-jdk make gcc-4.3 linux-headers-`uname -r` <<!!!
+apt-get install git sun-java6-jdk make gcc-4.3 linux-headers-`uname -r` build-essential xserver-xorg-input-vmmouse xserver-xorg-video-vmware <<!!!
 Y
 !!!
 
