@@ -33,3 +33,20 @@ apt-get install git sun-java6-jdk <<!!!
 Y
 !!!
 
+# Finally, debian is at home with many different packages installed to supply a given function
+# In the case of java, it's common to have both OpenJDK and SunJDK installed.
+# We need the sun jdk, this command switches the default java install to the sun jdk
+update-java-alternatives -s java-6-sun
+
+# Groovy/Grails installation
+
+cd /usr/local
+wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-1.3.7.zip
+ln -s ./grails-1.3.7 ./grails
+unzip grails-1.3.7.zip
+rm grails-1.3.7.zip
+
+echo "" >> /etc/profile
+echo "export GRAILS_HOME=/usr/local/grails" >> /etc/profile
+echo "export PATH=$PATH:$GRAILS_HOME/bin" >> /etc/profile
+
