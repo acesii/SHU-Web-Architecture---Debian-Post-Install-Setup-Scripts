@@ -46,7 +46,10 @@ ln -s ./grails-1.3.7 ./grails
 unzip grails-1.3.7.zip
 rm grails-1.3.7.zip
 
-echo "" >> /etc/profile
-echo "export GRAILS_HOME=/usr/local/grails" >> /etc/profile
-echo "export PATH=$PATH:$GRAILS_HOME/bin" >> /etc/profile
+# Here we set up the various user profile settings needed to give everyone access to
+# the grails subsystem in their own login areas.
 
+echo "" >> /etc/profile
+echo "export JAVA_HOME=/usr/lib/jvm/default-java"
+echo "export GRAILS_HOME=/usr/local/grails" >> /etc/profile
+echo "export PATH=\$PATH:\$GRAILS_HOME/bin" >> /etc/profile
