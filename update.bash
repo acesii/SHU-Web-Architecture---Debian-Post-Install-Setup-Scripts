@@ -21,23 +21,24 @@ apt-get update
 # there are some great tips for automated installs of the SUN JDK from robert maldons blog, here is the page
 # http://robertmaldon.blogspot.com/2011/08/installing-sun-oracle-jdk-on-ubuntu.html
 # That talks about how to turn off the annoying sun jdk license prompt
-
-echo "Accepting the sun jdk6 license...."
-echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | sudo /usr/bin/debconf-set-selections
-echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | sudo /usr/bin/debconf-set-selections
+##
+# echo "Accepting the sun jdk6 license...."
+# echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | sudo /usr/bin/debconf-set-selections
+# echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | sudo /usr/bin/debconf-set-selections
 
 # Use a "Here document" to redirect the text appearing between the !!!s as the standard input
 # for the apt-get command. Essentially saving the user the need to type "Y<enter>"
 # We also install make, gcc and linux-headers for the current kernel.. These are needed to run the vmware hosttools
 
-apt-get install git sun-java6-jdk make gcc-4.3 linux-headers-`uname -r` build-essential xserver-xorg-input-vmmouse xserver-xorg-video-vmware <<!!!
+# apt-get install git sun-java6-jdk make gcc-4.3 linux-headers-`uname -r` build-essential xserver-xorg-input-vmmouse xserver-xorg-video-vmware <<!!!
+apt-get install git make gcc-4.3 linux-headers-`uname -r` build-essential xserver-xorg-input-vmmouse xserver-xorg-video-vmware <<!!!
 Y
 !!!
 
 # Finally, debian is at home with many different packages installed to supply a given function
 # In the case of java, it's common to have both OpenJDK and SunJDK installed.
 # We need the sun jdk, this command switches the default java install to the sun jdk
-update-java-alternatives -s java-6-sun
+# update-java-alternatives -s java-6-sun
 
 # Groovy/Grails installation
 
